@@ -18,12 +18,10 @@ import tempfile
 import zipfile
 
 ROOT = Path(__file__).resolve().parent.parent
-# The one published SDK these proofs consume: sdk-v2.2.0 (signed approval at sco-core 686187ce).
-SDK_ROOT = 'sco-sdk-2.2.0'
+# The one published SDK these proofs consume: sdk-v2.3.0.
+SDK_ROOT = 'sco-sdk-2.3.0'
 SDK_ARCHIVE = SDK_ROOT + '.zip'
-SDK_SHA256 = '4b3ed980c424ef62665a9f496f877eb26850290d856e5eadefd0b514cca93538'
-# sdk-v2.3.0 (game.relocation 1.0): only the teleport and quantum proofs pass this pin.
-SDK_230 = ('sco-sdk-2.3.0', 'cc5e0678bd0a701f39ca11ed258f0a1e0a90cf7b1822cc6d3cb8dda0afd3a648')
+SDK_SHA256 = 'cc5e0678bd0a701f39ca11ed258f0a1e0a90cf7b1822cc6d3cb8dda0afd3a648'
 
 
 def run(argv, cwd, success=True):

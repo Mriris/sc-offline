@@ -10,7 +10,7 @@ Observed a second time by the maintainer, on a desktop session with the game run
 
 ## v0.7.8.3 build plugin
 
-`data/plugins/build` ships enabled from v0.7.8.3. `tools/check_build_sdk.py` builds it against the published `sdk-v2.2.0` archive, checks its compiler dependencies and boundary negatives, and runs the SDK's `sco-plugin-check` with no game services: place, undo, clear and status answer, and the interactive commands (`build.toggle`/F6, `build.aim`, `build.drop`) refuse. That is a development-machine check, not a game run.
+`data/plugins/build` ships enabled from v0.7.8.3. `tools/check_build_sdk.py` builds it against the published `sdk-v2.3.0` archive, checks its compiler dependencies and boundary negatives, and runs the SDK's `sco-plugin-check` with no game services: place, undo, clear and status answer, and the interactive commands (`build.toggle`/F6, `build.aim`, `build.drop`) refuse. That is a development-machine check, not a game run.
 
 **NOT VERIFIED:** the build plugin in game. Owed: `build.place` with a class and with a `.socpak` path actually grounding an object ahead of the player, `build.undo` and `build.clear` actually removing what was placed (and only that), the plugin loading from the release folder on Windows, unload removing placements, and F6 refusing cleanly. Interactive build mode and the free camera stay unavailable until a production G5 adapter exists; placements are not kept across reloads.
 
@@ -33,7 +33,7 @@ Since v0.7.8.1 the shell reports offline-session and network
 evidence from live firewall and connection reads (see above); it still never infers
 safety from flags or patch success.
 
-The host is pinned to sco-core `main` at commit `e616ed69d8f9f77b0f4827881c86d91e4a7d1689`, after the published `sdk-v2.3.0` (it adds the `game.relocation` production path and the `game.quantum` backend; the external plugins still build against the published SDK archives): SDK baseline **2.3.0**, plugin ABI **1.1** (unchanged), Star Citizen game pack **0.6.0** (the published `sdk-v2.2.0` archive that most external plugins build against carries 0.5.0). The game pack's signature evidence at this pin targets Star Citizen **4.10.196.36804**; it is not a game-session result for this product pin.
+The host is pinned to sco-core `main` at commit `e616ed69d8f9f77b0f4827881c86d91e4a7d1689`, after the published `sdk-v2.3.0` (it adds the `game.relocation` production path and the `game.quantum` backend; the external plugins build against the published `sdk-v2.3.0` archive): SDK baseline **2.3.0**, plugin ABI **1.1** (unchanged), Star Citizen game pack **0.6.0** (the same version the published `sdk-v2.3.0` archive carries). The game pack's signature evidence at this pin targets Star Citizen **4.10.196.36804**; it is not a game-session result for this product pin.
 
 **Not adopted by this product yet:** sco-core `main` has moved past this pin. It now records signature rows resolved on Star Citizen **4.10.197.2878** and has merged the `game.actor_stats` read and write services (the write service is off pending in-game confirmation; stat units, range and direction are not run in game). sc-offline neither pins nor ships those, so nothing here claims support for 4.10.197.2878 or for actor stats.
 
@@ -66,7 +66,7 @@ there, and multiplayer is unregistered at this revision: 13 baseline IDs remain.
 Two optional bridge modules and supporting data packs are counted separately.
 Older command fixtures used published SDK 2.0.0, not engine evidence.
 
-**Picker restoration (SDK 2.2.0):** external spawn, crew and npc own
+**Picker restoration (SDK 2.3.0):** external spawn, crew and npc own
 the Vehicles, Crew and NPCs panels through public `sco.widgets`. Shared public
 `lists/ships.txt` and `lists/npcs.txt` catalogs retain pack/row order and duplicate
 identity; filtered pages and manual classes are available. The supporting
@@ -74,7 +74,7 @@ identity; filtered pages and manual classes are available. The supporting
 are unchanged. The host renders neutral copied panels on its game-thread frame.
 The one `picker-module-workflow` fixture dynamically loads all three actual
 macOS modules and checks UI events against synthetic public providers; it is
-not renderer/game evidence. The pinned published `sdk-v2.2.0` ships widgets
+not renderer/game evidence. The pinned published `sdk-v2.3.0` ships widgets
 and content (`sdk-v2.0.0` did not); Windows rendering and game acceptance remain owed.
 SQ42 ordinary ship shortcuts invoke `spawn.ship_options`; enemy-wing orchestration
 is deferred. Destination startup refuses G2/G3 without a private fallback. Owner
