@@ -1,5 +1,7 @@
 # Features
 
+> **Evidence note.** This page describes what each feature is meant to do. Apart from offline startup (see [Status](status.md)), none of it is verified in game on the current release: items inherited from ChrisWareOffline 0.9.0-rc1 were last tried upstream, and the external plugins are checked only on a development machine. "Works" below means "designed to" unless Status says otherwise.
+
 **Current G8 migration boundary:** [external Quantum/Travel](../plugins/quantum/README.md) retains travel IDs, bookmark storage and the Travel panel, adds explicit bounded quantum controls, and removes private boost/keeper activation. Core requires an admitted owned-state backend; its default production adapter is absent, so real boost/effects and NAV input parity are still unavailable. G2 relocation and G7 cvar writes remain refused. Historical feature descriptions below are not current gameplay acceptance.
 
 **M** opens the neutral menu shell. Available tabs depend on enabled modules and
@@ -20,7 +22,7 @@ Most of the lists below are plain text files in `data/`, and the counts are take
 
 ## Travel
 
-- Teleport to planets, moons, stations, Lagrange points and jump points, grouped by star system (`locations.txt`).
+- Teleport to planets, moons, stations, Lagrange points and jump points, grouped by star system (`locations.txt`). In this release F7/F8 and `quantum.travel` run through `game.relocation` and have **not been run in game**.
 - **Scan** lists everything the game has loaded and writes it to `locations_found.txt`. Interiors and small zones are hidden unless you ask to see them.
 - Save named spots of your own (`data/storage/quantum.db`). **F7** saves one quick position and **F8** takes you back to it (`data/storage/teleport.db`). F7 and F8 run the built-in teleport plugin's commands; see [Plugins](#plugins). Spots saved in `bookmarks.txt` and `spawn.txt` by an older version are imported the first time you start this one ([Saves](data-files.md#saves)).
 - A teleport won't take you into another star system. Pyro and Nyx can only be reached with the default `boot_map = PU_All`.
@@ -35,7 +37,7 @@ Most of the lists below are plain text files in `data/`, and the counts are take
 
 ## Ship terminals, hangars and ATC
 
-The station's ship terminals (ASOP) work offline, with `asop = on` in `sc-offline.ini` (the default):
+The station's ship terminals (ASOP) are designed to work offline, with `asop = on` in `sc-offline.ini` (the default). Not run in game on a current build:
 
 - **Open a terminal.** It lists the ships of `ships.txt` instead of staying on "Stand by".
 - **Deliver** stores a ship at the terminal's station. The ship is spawned 1000 m above you for about 3 s and then stored. The terminal shows "Awaiting Delivery" for a few seconds, then "Stored" with a Retrieve action.
@@ -72,9 +74,9 @@ Spawn/removal use `game.actors`, pose uses `teleport.spatial` and observation us
 
 ## Build (F6)
 
-- Free build mode with 3728 buildable objects in 18 groups (`buildables.txt`).
-- Prefabs show as a flag while the camera moves, then as the real building once it stops.
-- **Undo** and **Clear base** remove what you placed.
+- Interactive build mode (F6, free camera, aiming, preview) is **not available** in the current release: the external build plugin ships `build.place`, `build.undo` and `build.clear` only, and none has been run in game.
+- The historical mode used 3728 buildable objects in 18 groups (`buildables.txt`); prefabs showed as a flag while the camera moved, then as the real building.
+- **Undo** and **Clear base** are meant to remove what you placed (not run in game).
 
 ### Build mode and `game.entities`
 
@@ -92,7 +94,7 @@ If `game.world` isn't published or a capability isn't ready on your game build, 
 
 ## Contracts
 
-`contract_scripts.txt` lists the 796 contracts that run without any of CIG's mission scripts (hauling and similar). The mobiGlas list leaves out Pyro and Nyx contracts and anything named test, debug or tutorial (`src/contracts.cpp` `Listable`). `mod.log` records the counts at startup: `[contracts] N contracts known; M run ...`.
+`contract_scripts.txt` lists the 796 contracts that are meant to run without any of CIG's mission scripts (hauling and similar); listing, accept, completion and rewards are not verified in game on the current host engine. The mobiGlas list leaves out Pyro and Nyx contracts and anything named test, debug or tutorial (`src/contracts.cpp` `Listable`). `mod.log` records the counts at startup: `[contracts] N contracts known; M run ...`.
 
 This repository ships none of CIG's Subsumption mission scripts. Contracts that need them (bounty, delivery-with-combat, salvage and others) are not offered.
 

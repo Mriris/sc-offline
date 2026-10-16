@@ -48,9 +48,19 @@ You need your own installed copy of Star Citizen and **64-bit Windows**. Linux t
 1. Download **`sc-offline-<version>.zip`** from [Releases](https://github.com/scubamount/sc-offline/releases/latest), not GitHub's source-code zip.
 2. Extract it into its own folder and keep the files together. Do not copy the DLL into the game folder yourself.
 3. Close the game, open **`sc-offline.exe`** normally and click **Play**. Approve the setup helper's administrator prompt.
-4. Let initialization finish, then press **M** in game to open the menu. A pause of roughly 15 seconds before the game window appears is expected.
+4. Let initialization finish. The launcher holds the game at its first instruction while the mod starts (up to 60 seconds by design), so a pause of roughly 15 seconds before the game window appears is expected. Then **M** is meant to open the menu in game; opening the menu has **not been confirmed in game** on a current release ([Status](docs/status.md)).
 
 Use the launcher's **Plugins** page to manage extensions. Feature availability depends on the release, game build and enabled services; see [Features](docs/features.md) and [Status](docs/status.md), rather than assuming `main` and a downloaded release are identical.
+
+## What has actually been run
+
+Read this before relying on any feature description. Only the owner runs the game; a green build, a synthetic check or a resolved signature is never a game result.
+
+- **Observed in game (once or twice, startup only):** v0.7.8.1 offline startup on two Windows PCs: offline evidence line clear, every offline patch applied, signatures resolved, plugins loaded, the game loading into the universe. Play beyond loading in, the menu and every feature below are **not verified in game**.
+- **Checked on a development machine only:** the external plugins build against published SDK archives and pass the SDK's plugin checker with no game services. That is a build and contract check, not gameplay.
+- **Current pins:** the Windows host is built from sco-core `main` at `e616ed6` (SDK baseline 2.3.0, plugin ABI 1.1, Star Citizen game pack 0.6.0); its signature evidence targets game build 4.10.196.36804. External plugins build against SDK 2.2.0, except teleport and quantum, which build against SDK 2.3.0. A newer sco-core `main` has since verified signatures on build 4.10.197.2878 and merged actor stats read/write services; this release does **not** include them, and the stats services have not been run in game.
+
+Details and the list of owed in-game checks: [Status](docs/status.md).
 
 ## Go back online
 
@@ -80,7 +90,7 @@ Build success and resolved signatures do not establish gameplay correctness. Out
 | [Launcher](docs/launcher.md) · [Linux](docs/linux.md) | Setup, configuration, updates, recovery and experimental Wine support |
 | [Features](docs/features.md) · [Data files](docs/data-files.md) | User-facing capabilities, catalogs and saves |
 
-Offline play is the scope: no CIG servers or online progression. Optional co-presence lives separately in [sc-mp](https://github.com/scubamount/sc-mp); it and the optional [cross-game bridges](docs/bridges.md) are excluded from the standard release.
+Offline play is the scope: no connection to CIG servers or online services, no anti-cheat bypass, no telemetry and no account or entitlement changes (see [CONTRIBUTING](CONTRIBUTING.md) and [SECURITY](SECURITY.md)). Optional co-presence lives separately in [sc-mp](https://github.com/scubamount/sc-mp); it and the optional [cross-game bridges](docs/bridges.md) are excluded from the standard release.
 
 ## Credits and license
 
