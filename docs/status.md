@@ -33,7 +33,9 @@ Since v0.7.8.1 the shell reports offline-session and network
 evidence from live firewall and connection reads (see above); it still never infers
 safety from flags or patch success.
 
-The host is pinned to sco-core `main` at commit `e616ed69d8f9f77b0f4827881c86d91e4a7d1689`, after the published `sdk-v2.3.0` (it adds the `game.relocation` production path and the `game.quantum` backend; the external plugins still build against the published SDK archives): SDK baseline **2.3.0**, plugin ABI **1.1** (unchanged), Star Citizen game pack **0.5.0**. The game pack's signature evidence targets Star Citizen **4.10.196.36804**; it is not a game-session result for this product pin.
+The host is pinned to sco-core `main` at commit `e616ed69d8f9f77b0f4827881c86d91e4a7d1689`, after the published `sdk-v2.3.0` (it adds the `game.relocation` production path and the `game.quantum` backend; the external plugins still build against the published SDK archives): SDK baseline **2.3.0**, plugin ABI **1.1** (unchanged), Star Citizen game pack **0.6.0** (the published `sdk-v2.2.0` archive that most external plugins build against carries 0.5.0). The game pack's signature evidence at this pin targets Star Citizen **4.10.196.36804**; it is not a game-session result for this product pin.
+
+**Not adopted by this product yet:** sco-core `main` has moved past this pin. It now records signature rows resolved on Star Citizen **4.10.197.2878** and has merged the `game.actor_stats` read and write services (the write service is off pending in-game confirmation; stat units, range and direction are not run in game). sc-offline neither pins nor ships those, so nothing here claims support for 4.10.197.2878 or for actor stats.
 
 The release-pin smoke checks: offline startup was **observed once** for v0.7.8.1 (above); EAC detection/refusal, services published before plugins, menu and clean exit remain **NOT RUN** in game. CI build success does not close these owner-run checks.
 
