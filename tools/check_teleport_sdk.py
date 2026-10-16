@@ -16,7 +16,7 @@ import shutil
 import sys
 
 sys.dont_write_bytecode = True
-from check_inspector_sdk import SDK_230, contained, run, trace_posix, trace_windows, verify_extract
+from check_inspector_sdk import contained, run, trace_posix, trace_windows, verify_extract
 
 ROOT = Path(__file__).resolve().parent.parent
 
@@ -44,7 +44,7 @@ def prove(args, spec):
     if contained(work, ROOT):
         raise AssertionError(f'{feature} proof must live outside the host checkout')
     work.mkdir(parents=True, exist_ok=False)
-    sdk, public = verify_extract(args.archive.resolve(), args.sums.resolve(), work / 'sdk', pin=SDK_230)
+    sdk, public = verify_extract(args.archive.resolve(), args.sums.resolve(), work / 'sdk')
     source = work / 'source'
     (source / 'plugins').mkdir(parents=True)
     for folder in (feature, 'spatial'):

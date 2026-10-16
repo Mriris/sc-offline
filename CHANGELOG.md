@@ -1,5 +1,9 @@
 # Changelog
 
+## Unreleased
+
+- **One SDK for every external plugin.** The creative, discord, crew, spawn, build and mining plugins and the inspector, npc and contracts proof jobs now build and check against the published sco-core SDK 2.3.0 (`sdk-v2.3.0`, game pack 0.6.0), the same archive teleport and quantum already used. Plugin ABI 1.1 is unchanged and no plugin behaviour changes: this is a build-input bump only. Checked on a development machine with synthetic services and the SDK's plugin checker. **Not run in game.**
+
 ## 0.7.8.3 (2026-10-15)
 
 - **The Vehicles panel opens again.** In 0.7.8.x the spawn plugin's panel was refused at load (`[spawn] warning: Vehicles panel refused` in `mod.log`) because its empty owned-ship list broke the panel rules; spawn commands kept working. Not yet checked in game.

@@ -27,7 +27,7 @@ headers; NPC and inspector are built against the published SDK archive.
 At this revision `external/sco-core` is pinned to `e616ed69d8f9f77b0f4827881c86d91e4a7d1689`
 (sco-core `main`, after `sdk-v2.3.0`). sco-core keeps its own
 [`THIRD_PARTY_NOTICES.md`](https://github.com/scubamount/sco-core/blob/e616ed69d8f9f77b0f4827881c86d91e4a7d1689/THIRD_PARTY_NOTICES.md)
-and [`docs/legal/third-party-inventory.md`](https://github.com/scubamount/sco-core/blob/sdk-v2.2.0/docs/legal/third-party-inventory.md),
+and [`docs/legal/third-party-inventory.md`](https://github.com/scubamount/sco-core/blob/sdk-v2.3.0/docs/legal/third-party-inventory.md),
 with each component's source and file hashes. Lua, SQLite and toml++ are not in this
 repository's own tree; they reach the release only through that submodule.
 
