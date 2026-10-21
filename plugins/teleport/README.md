@@ -22,12 +22,12 @@ Retains owner ID/database `teleport`, key `spot`, import marker `spawn.txt.time`
 
 ## Build and install
 
-1. Extract the published `sdk-v2.3.0` archive (it contains `sc_relocation.h` and `sc_game_spatial.h`) and verify it against the release `SHA256SUMS`.
+1. Extract the published `sdk-v2.4.0-rc.1` archive (it contains `sc_relocation.h` and `sc_game_spatial.h`) and verify it against the release `SHA256SUMS`.
 2. `cmake -S plugins/teleport -B build-teleport -DSCO_SDK_INCLUDE_DIR=/path/to/extracted/include [-DSCO_TRAVEL_TEST=ON]`, then build `sc-offline-teleport` (and `travel-model-test`).
 3. `cmake --install build-teleport --prefix /path/to/product --component teleport` gives `data/plugins/teleport/` with the native module and its enabled manifest.
 
-`tools/check_teleport_sdk.py --archive sco-sdk-2.3.0.zip --sums SHA256SUMS --work <new dir>` does all of this outside the checkout, runs the synthetic travel model test, traces compiler dependencies, runs boundary negatives and a relocation red arm (POSIX), and runs the SDK's `sco-plugin-check`.
+`tools/check_teleport_sdk.py --archive sco-sdk-2.4.0.zip --sums SHA256SUMS --work <new dir>` does all of this outside the checkout, runs the synthetic travel model test, traces compiler dependencies, runs boundary negatives and a relocation red arm (POSIX), and runs the SDK's `sco-plugin-check`.
 
 Native modules are trusted code. GPL-3.0-only. Calls run on the game thread; copied metadata is never treated as valid across commands/ticks. Optional `sco.widgets` panel; an absent renderer leaves command-only operation. Unload removes panels, hotkeys and its tick subscription; `game.relocation` cancels and forgets the plugin's tickets on unload.
 
-**Evidence: development machine only.** Built against the published SDK 2.3.0 with synthetic providers and the SDK checker with no game services. Windows/MSVC, the real renderer, storage import twice, and every in-game move: **NOT VERIFIED; not run in game.**
+**Evidence: development machine only.** Built against the published SDK 2.4.0 with synthetic providers and the SDK checker with no game services. Windows/MSVC, the real renderer, storage import twice, and every in-game move: **NOT VERIFIED; not run in game.**

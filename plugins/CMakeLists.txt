@@ -87,7 +87,7 @@ if(SCO_ADDITIONAL_FEATURES)
   add_subdirectory(quantum)
   add_subdirectory(teleport)
   add_subdirectory(build)
-  # Pinned sdk-v2.3.0 ships sc_mining.h (2.0.0 did not); host builds still opt in explicitly.
+  # Pinned sdk-v2.4.0-rc.1 ships sc_mining.h (2.0.0 did not); host builds still opt in explicitly.
   option(SCO_MINING_FEATURE "Build external mining (requires newer game SDK)" OFF)
   if(SCO_MINING_FEATURE)
     add_subdirectory(mining)
@@ -112,7 +112,7 @@ if(SCO_PICKER_TEST)
     $<TARGET_FILE:sc-offline-spawn> $<TARGET_FILE:sc-offline-crew> $<TARGET_FILE:sc-offline-npc>)
 endif()
 # Ships in the release as the external contracts folder; the built-in is gone, so there is no
-# duplicate built-in ID and no co-install constraint. Providers are default OFF in sdk-v2.3.0.
+# duplicate built-in ID and no co-install constraint. Providers are default OFF in SDK 2.4.0.
 option(SCO_CONTRACTS_FEATURE "Build command-first contracts consumer" ON)
 if(SCO_CONTRACTS_FEATURE AND EXISTS "${CMAKE_CURRENT_SOURCE_DIR}/contracts/CMakeLists.txt")
   # Proof trees configure this directory with a subset of the feature folders (check_npc_sdk.py,

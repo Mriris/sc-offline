@@ -1,7 +1,7 @@
-# Owned build module (SDK 2.3.0 consumer)
+# Owned build module (SDK 2.4.0 consumer)
 
 Trusted native GPL-3.0-only feature, plugin ABI 1.1. This module requires public
-G4/G9 headers/services, which the pinned published sdk-v2.3.0 ships
+G4/G9 headers/services, which the pinned published sdk-v2.4.0-rc.1 ships
 (sdk-v2.0.0 did not).
 
 ## Build and install
@@ -61,5 +61,5 @@ Local macOS module configure/compile/link and portable host command-facade objec
 compile only. Tests/checker/archive boundary proofs/reviews **NOT RUN** by owner
 speed order. Windows/MSVC/SEH, actual game, streamed prefab cleanup, collision,
 filtered rays, camera restore, rendering and default release staging **NOT VERIFIED**.
-The release workflow downloads sdk-v2.3.0, which ships these headers, but does not
+The release workflow downloads sdk-v2.4.0-rc.1, which ships these headers, but does not
 stage this module: release-folder wiring is required before shipping.

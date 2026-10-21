@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 # SPDX-License-Identifier: GPL-3.0-only
-"""One focused crew dynamic-module proof against checksum-verified sdk-v2.3.0.
+"""One focused crew dynamic-module proof against checksum-verified SDK 2.4.0 (sdk-v2.4.0-rc.1).
 
 Copies only the crew consumer and fixture outside the checkout. Reuses the
 established published-archive and exact dependency proofs from inspector #123.
