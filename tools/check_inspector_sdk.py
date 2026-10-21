@@ -18,10 +18,11 @@ import tempfile
 import zipfile
 
 ROOT = Path(__file__).resolve().parent.parent
-# The one published SDK these proofs consume: sdk-v2.3.0.
-SDK_ROOT = 'sco-sdk-2.3.0'
+# The one published SDK these proofs consume: SDK 2.4.0 release candidate 1 (tag sdk-v2.4.0-rc.1),
+# combined archive sco-sdk-2.4.0.zip (plugin ABI 1.1, Star Citizen game pack 0.8.0).
+SDK_ROOT = 'sco-sdk-2.4.0'
 SDK_ARCHIVE = SDK_ROOT + '.zip'
-SDK_SHA256 = 'cc5e0678bd0a701f39ca11ed258f0a1e0a90cf7b1822cc6d3cb8dda0afd3a648'
+SDK_SHA256 = '124751534277b89f0516af1897919c3485923811596e159a1f683bb80b1c243b'
 
 
 def run(argv, cwd, success=True):

@@ -157,7 +157,7 @@ sco_result Board(const sco_arg* args,uint32_t n,void*,char* out,uint32_t size) {
 sco_result Startup(const sco_arg*,uint32_t n,void*,char* out,uint32_t size) {
     if(!g.api) return SCO_UNAVAILABLE;
     if(n || (!out && size)) return SCO_BAD_ARG;
-    return Answer(SCO_UNAVAILABLE,out,size,"Destination startup unavailable: G2/G3 player relocation/full-pose discovery are not in sdk-v2.0.0; no private fallback");
+    return Answer(SCO_UNAVAILABLE,out,size,"Destination startup unavailable: this plugin does not use G2/G3 player relocation/full-pose discovery yet; no private fallback");
 }
 sco_result Remove(const sco_arg* args,uint32_t n,void*,char* out,uint32_t size) {
     if (!g.api) return SCO_UNAVAILABLE;

@@ -30,7 +30,7 @@ The optional `sco.widgets` panel retains ID `quantum.travel` and now has title *
 
 ## Build, install and focused evidence
 
-Use the published `sdk-v2.3.0` archive (it contains `sc_quantum.h`, `sc_game_spatial.h`, `sc_relocation.h` and `sco_widgets.h`). The release workflow stages quantum enabled through `tools/check_quantum_sdk.py`, which builds against that archive outside the checkout, runs the module workflow below, traces compiler dependencies, runs boundary negatives and a relocation red arm (POSIX), and runs the SDK's `sco-plugin-check` with no game services. That is not a game proof.
+Use the published `sdk-v2.4.0-rc.1` archive (it contains `sc_quantum.h`, `sc_game_spatial.h`, `sc_relocation.h` and `sco_widgets.h`). The release workflow stages quantum enabled through `tools/check_quantum_sdk.py`, which builds against that archive outside the checkout, runs the module workflow below, traces compiler dependencies, runs boundary negatives and a relocation red arm (POSIX), and runs the SDK's `sco-plugin-check` with no game services. That is not a game proof.
 
 ```sh
 cmake -S plugins/quantum -B build-quantum -DSCO_SDK_INCLUDE_DIR=/path/to/extracted/include -DSCO_QUANTUM_TEST=ON -DCMAKE_BUILD_TYPE=Debug

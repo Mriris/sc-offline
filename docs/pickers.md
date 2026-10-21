@@ -65,9 +65,9 @@ is invented. Player/SQ42/Travel/Build/bridge policies belong to their modules.
 
 ## Build and evidence boundary
 
-The published pin is `sdk-v2.3.0`; it ships the widgets/content headers
+The published pin is SDK 2.4.0 release candidate 1 (`sdk-v2.4.0-rc.1`); it ships the widgets/content headers
 (`sdk-v2.0.0` did not). Build these sources against the extracted,
-checksum-verified `sco-sdk-2.3.0.zip`. Do not add
+checksum-verified `sco-sdk-2.4.0.zip`. Do not add
 the host checkout to a plugin's include paths.
 
 One targeted fixture loads the actual three modules against synthetic public

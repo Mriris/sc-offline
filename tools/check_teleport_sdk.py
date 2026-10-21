@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 # SPDX-License-Identifier: GPL-3.0-only
-"""Standalone teleport module proof from checksum-verified published sdk-v2.3.0.
+"""Standalone teleport module proof from checksum-verified published SDK 2.4.0 (sdk-v2.4.0-rc.1).
 
 Reuses the inspector archive/dependency machinery, never host include paths. The
 shared travel code lives in plugins/spatial, the only sibling folder the trace admits.

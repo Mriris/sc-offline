@@ -87,7 +87,7 @@ if(SCO_ADDITIONAL_FEATURES)
   add_subdirectory(quantum)
   add_subdirectory(teleport)
   add_subdirectory(build)
-  # Pinned sdk-v2.3.0 ships sc_mining.h (2.0.0 did not); host builds still opt in explicitly.
+  # Pinned sdk-v2.4.0-rc.1 ships sc_mining.h (2.0.0 did not); host builds still opt in explicitly.
   option(SCO_MINING_FEATURE "Build external mining (requires newer game SDK)" OFF)
   if(SCO_MINING_FEATURE)
     add_subdirectory(mining)
