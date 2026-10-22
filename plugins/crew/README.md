@@ -27,7 +27,7 @@ in this module. The command IDs remain available through the host's typed
 ## Obtain, build/check, install
 
 1. Obtain the published combined `sco-sdk-2.4.0.zip` and its adjacent release
-   `SHA256SUMS` from [sdk-v2.4.0-rc.1](https://github.com/scubamount/sco-core/releases/tag/sdk-v2.4.0-rc.1) (SDK 2.4.0 release candidate 1).
+   `SHA256SUMS` from [sdk-v2.4.0-rc.1](https://github.com/scuba-sc/sco-core/releases/tag/sdk-v2.4.0-rc.1) (SDK 2.4.0 release candidate 1).
    The proof verifies both the archive checksum and every extracted inventory
    entry. It never initializes the host submodule or includes host sources.
 2. From the product source, run the focused archive proof (new directory outside

@@ -4,10 +4,10 @@
 
 The build is CMake (`CMakeLists.txt` at the root), x64 only, with MSVC.
 
-[sco-core](https://github.com/scubamount/sco-core) (the scanners, signature rows, host kit, plugin loader and sco-lua) is a git submodule in `external/sco-core`, built into `dinput8.dll`. Clone with it:
+[sco-core](https://github.com/scuba-sc/sco-core) (the scanners, signature rows, host kit, plugin loader and sco-lua) is a git submodule in `external/sco-core`, built into `dinput8.dll`. Clone with it:
 
 ```
-git clone --recurse-submodules https://github.com/scubamount/sc-offline.git
+git clone --recurse-submodules https://github.com/scuba-sc/sc-offline.git
 ```
 
 In an existing clone, or after a pull that moves the pin, run `git submodule update --init`. Without it, CMake configure and `tools/check.sh` stop and say so.
@@ -26,7 +26,7 @@ In an existing clone, or after a pull that moves the pin, run `git submodule upd
 
 The targets are `dinput8` (the DLL), `sc-offline` (the launcher), `imgui` (the vendored Dear ImGui under `src/third_party/imgui`, built as a static library with its warnings off) `sc-offline-creative` (the optional creative plugin, built from `plugins/creative/` with `/W4 /WX`), the test plugins `spawn_probe`, `builtins_probe` and `ui_probe` (`tools/test-plugins/`, never in a release), `bridge-peer` (only with the bridge options) and sco-core's libraries (`sco_app`, `sco_lua` with its Star Citizen adapter `sco_lua_game`, `sco_hook`, `sco_engine` and `sco_pak` for the DLL, `sco_sqlite` for the launcher, with what they link). sco-core is built without its tests and without warnings-as-errors; sco-core's own CI runs those. Both binaries link the C runtime statically, so they don't need the Visual C++ redistributable installed. Release builds use whole-program optimization and carry no debug information.
 
-No Visual Studio? CI builds both on every push to `main`. Download the `dinput8-release` artifact from [Actions](https://github.com/scubamount/sc-offline/actions).
+No Visual Studio? CI builds both on every push to `main`. Download the `dinput8-release` artifact from [Actions](https://github.com/scuba-sc/sc-offline/actions).
 
 ## How the code is organized
 
@@ -36,7 +36,7 @@ Nine remaining sc-offline features are built-in plugins. Each has a host-only `s
 
 *Historical:* this layout was reached one feature at a time (sco-core's `docs/framework.md`, Phase 4: teleport first, then spawn, and so on), and `teleport.spatial`, `spawn.entities` and the cheats used to live in sc-offline. The first two are published by sco-core's game pack now, and the cheats are the `creative` plugin. See [architecture.md](architecture.md#historical-notes).
 
-NPC and inspector implementations live under `plugins/`, with no host linkage, built-in registration or fallback; `src/workflow_adapters.cpp` is removed. Both ship enabled external SDK modules. The old NPC menu tab is removed pending renderer-neutral widgets ([sco-core #139](https://github.com/scubamount/sco-core/issues/139)); Crew retains its shared archetype picker and legacy `src/npc.cpp` is untouched. Standalone `plugins/CMakeLists.txt` supports targeted conformance without host headers; [SDK workflows](sdk-workflows.md) documents published-archive build/check/install proof. This does not make the remaining built-ins pure SDK consumers.
+NPC and inspector implementations live under `plugins/`, with no host linkage, built-in registration or fallback; `src/workflow_adapters.cpp` is removed. Both ship enabled external SDK modules. The old NPC menu tab is removed pending renderer-neutral widgets ([sco-core #139](https://github.com/scuba-sc/sco-core/issues/139)); Crew retains its shared archetype picker and legacy `src/npc.cpp` is untouched. Standalone `plugins/CMakeLists.txt` supports targeted conformance without host headers; [SDK workflows](sdk-workflows.md) documents published-archive build/check/install proof. This does not make the remaining built-ins pure SDK consumers.
 
 ## Check on macOS or Linux
 
@@ -95,4 +95,4 @@ Every action is pinned to a commit SHA. The workflow defaults to `contents: read
 - A maintainer can promote a pre-release to Latest with `gh release edit <tag> --prerelease=false --latest`. **That can happen before anyone has played the build.** When it does, the release notes and the CHANGELOG say the build is untested.
 - If a promoted build turns out broken, re-mark an earlier release as Latest (`gh release edit <tag> --latest`).
 
-To see the current state, check [Releases](https://github.com/scubamount/sc-offline/releases). This file deliberately doesn't name the current release, so that it can't go stale.
+To see the current state, check [Releases](https://github.com/scuba-sc/sc-offline/releases). This file deliberately doesn't name the current release, so that it can't go stale.

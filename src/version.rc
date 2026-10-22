@@ -38,7 +38,7 @@ BEGIN
             VALUE "OriginalFilename", SCO_RC_FILE
             VALUE "ProductName",      "sc-offline"
             VALUE "ProductVersion",   SCO_VERSION
-            VALUE "Comments",         "https://github.com/scubamount/sc-offline"
+            VALUE "Comments",         "https://github.com/scuba-sc/sc-offline"
         END
     END
     BLOCK "VarFileInfo"

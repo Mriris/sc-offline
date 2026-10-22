@@ -1,6 +1,6 @@
 # Plugin UI: menu tabs, overlays and hotkeys
 
-sc-offline's menu (**M**) is a shell over sco-core's `sco.ui` service ([sco-core docs/ui.md](https://github.com/scubamount/sco-core/blob/main/docs/ui.md)). Every feature tab is registered by its built-in plugin, and a plugin can add its own tab, overlay and hotkeys the same way. This page covers what sc-offline adds to sco-core's contract.
+sc-offline's menu (**M**) is a shell over sco-core's `sco.ui` service ([sco-core docs/ui.md](https://github.com/scuba-sc/sco-core/blob/main/docs/ui.md)). Every feature tab is registered by its built-in plugin, and a plugin can add its own tab, overlay and hotkeys the same way. This page covers what sc-offline adds to sco-core's contract.
 
 ## Tabs
 
@@ -22,7 +22,7 @@ To put a tab between two of these, give it an order in between. An order above 7
 
 NPC is now an external command-first plugin (`npc.spawn`, `npc.observe`, `npc.remove`,
 `npc.clear`), with no tab or new ImGui coupling. Its old NPC menu is unavailable pending
-renderer-neutral widgets ([sco-core #139](https://github.com/scubamount/sco-core/issues/139));
+renderer-neutral widgets ([sco-core #139](https://github.com/scuba-sc/sco-core/issues/139));
 Crew retains its existing host archetype picker. Inspector is command-only too.
 
 ## Drawing: ImGui through sc-offline's frame

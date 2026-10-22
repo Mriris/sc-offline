@@ -158,7 +158,7 @@ While you play, the helper changes three things outside the game folder and undo
 
 ### Updates
 
-On `play` and `status` the launcher asks GitHub for the newest release of `scubamount/sc-offline`
+On `play` and `status` the launcher asks GitHub for the newest release of `scuba-sc/sc-offline`
 (3-second timeout; no network just skips it). With `update_channel = stable` (the default) only full
 releases are offered; `update_channel = prerelease` also offers pre-releases (test builds). Drafts, older
 versions and tags that aren't plain numbers are never offered. If a newer one exists, `play` asks
@@ -202,7 +202,7 @@ Two things vouch for an update. Neither is a signature: releases aren't code-sig
    A listed path with `..`, a leading `/`, a `\` or a `:` makes the whole update fail.
 
 So the update is exactly what CI built from that commit, as long as the GitHub release itself is
-trustworthy. Anyone who can publish a release on `scubamount/sc-offline` can publish an update.
+trustworthy. Anyone who can publish a release on `scuba-sc/sc-offline` can publish an update.
 
 #### Checking a release by hand
 
@@ -210,7 +210,7 @@ On Windows (PowerShell), in the folder you downloaded the zip to:
 
 ```powershell
 # 1. The zip against GitHub's digest (shown on the release page next to the asset, or:)
-#    gh release view v0.7.0 -R scubamount/sc-offline --json assets --jq '.assets[] | [.name, .digest]'
+#    gh release view v0.7.0 -R scuba-sc/sc-offline --json assets --jq '.assets[] | [.name, .digest]'
 (Get-FileHash .\sc-offline-v0.7.0.zip -Algorithm SHA256).Hash.ToLower()
 
 # 2. Every unpacked file against manifest.json
@@ -229,7 +229,7 @@ No output after the summary line means every listed file matches. A file in the 
 doesn't list (other than `manifest.json`) isn't part of the release. With Python (macOS, Linux or Windows),
 `python3 tools/release-manifest.py check sc-offline-v0.7.0` from a clone of this repository does step 2,
 also flags unlisted files, and exits non-zero on any problem. The `commit` field lets you
-look up the exact source at `https://github.com/scubamount/sc-offline/tree/<commit>`.
+look up the exact source at `https://github.com/scuba-sc/sc-offline/tree/<commit>`.
 
 ### Discord status
 

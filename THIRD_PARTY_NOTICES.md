@@ -16,7 +16,7 @@ what the build compiles in and where it comes from. It is not a legal opinion.
 | --- | --- | --- | --- |
 | sc-offline's own code | `src/` (except `src/third_party/`), `launcher/`, `plugins/` | `dinput8.dll`, `sc-offline.exe`, the plugin DLLs | GPL-3.0-only |
 | [Dear ImGui](#dear-imgui-1928-wip) 1.92.8 WIP | `src/third_party/imgui/`, vendored in this repository | `dinput8.dll`, `sc-offline.exe` | MIT |
-| [sco-core](https://github.com/scubamount/sco-core) | `external/sco-core` git submodule | `dinput8.dll` | GPL-3.0-only |
+| [sco-core](https://github.com/scuba-sc/sco-core) | `external/sco-core` git submodule | `dinput8.dll` | GPL-3.0-only |
 | [Lua](#lua-548) 5.4.8, modified | sco-core `plugins/lua/third_party/lua/` | `dinput8.dll` | MIT |
 | [SQLite](#sqlite-3534) 3.53.4 | sco-core `third_party/sqlite/` | `dinput8.dll`, `sc-offline.exe` | Public domain |
 | [toml++](#toml-340) 3.4.0 | sco-core `third_party/tomlplusplus/` | `dinput8.dll` | MIT |
@@ -26,8 +26,8 @@ headers; NPC and inspector are built against the published SDK archive.
 
 At this revision `external/sco-core` is pinned to `e616ed69d8f9f77b0f4827881c86d91e4a7d1689`
 (sco-core `main`, after `sdk-v2.3.0`). sco-core keeps its own
-[`THIRD_PARTY_NOTICES.md`](https://github.com/scubamount/sco-core/blob/e616ed69d8f9f77b0f4827881c86d91e4a7d1689/THIRD_PARTY_NOTICES.md)
-and [`docs/legal/third-party-inventory.md`](https://github.com/scubamount/sco-core/blob/sdk-v2.3.0/docs/legal/third-party-inventory.md),
+[`THIRD_PARTY_NOTICES.md`](https://github.com/scuba-sc/sco-core/blob/e616ed69d8f9f77b0f4827881c86d91e4a7d1689/THIRD_PARTY_NOTICES.md)
+and [`docs/legal/third-party-inventory.md`](https://github.com/scuba-sc/sco-core/blob/sdk-v2.3.0/docs/legal/third-party-inventory.md),
 with each component's source and file hashes. Lua, SQLite and toml++ are not in this
 repository's own tree; they reach the release only through that submodule.
 

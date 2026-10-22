@@ -1,6 +1,6 @@
 # Tutorial-owned SDK consumers
 
-Use [sco-core’s SDK/MCP tutorial](https://github.com/scubamount/sco-core/blob/main/docs/sdk-mcp-tutorial.md) for the end-to-end static discovery, archive build, checker, named dynamic fixture and owner installation/lifecycle steps.
+Use [sco-core’s SDK/MCP tutorial](https://github.com/scuba-sc/sco-core/blob/main/docs/sdk-mcp-tutorial.md) for the end-to-end static discovery, archive build, checker, named dynamic fixture and owner installation/lifecycle steps.
 
 Copyable source is generated from this checkout by:
 

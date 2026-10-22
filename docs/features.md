@@ -133,7 +133,7 @@ The Gladius' new quantum drive (hold Caps Lock, or B for NAV mode then hold left
 
 ## Plugins
 
-sc-offline can load plugins built with the [sco SDK](https://github.com/scubamount/sco-core/blob/main/sdk/README.md): native DLLs, Lua scripts and data packs. Loading is **on by default** (`plugins = on` in `sc-offline.ini`); the current release recipe stages external native IDs `spawn`, `crew`, `build`, `npc`, `inspector`, `teleport`, `quantum` (on), `discord` and `creative` (off). Other external implementations await staging; [status](status.md) distinguishes source implementation from distribution. None has a hidden built-in fallback.
+sc-offline can load plugins built with the [sco SDK](https://github.com/scuba-sc/sco-core/blob/main/sdk/README.md): native DLLs, Lua scripts and data packs. Loading is **on by default** (`plugins = on` in `sc-offline.ini`); the current release recipe stages external native IDs `spawn`, `crew`, `build`, `npc`, `inspector`, `teleport`, `quantum` (on), `discord` and `creative` (off). Other external implementations await staging; [status](status.md) distinguishes source implementation from distribution. None has a hidden built-in fallback.
 
 1. Keep `plugins = on` in `sc-offline.ini`.
 2. Put each plugin in its own folder, `data/plugins/<id>/`, with its `plugin.ini` (for example `data/plugins/hello/plugin.ini` and `hello.dll`). The SDK's examples (`hello`, `greeter`, `travel_pack`) are ready to copy.
@@ -243,7 +243,7 @@ Two more built-ins link the game to another game on the same PC through sco-core
 
 These need RSI's servers, and the mod doesn't replace them:
 
-- Character creation and customization: the main menu is skipped. Not planned ([#24](https://github.com/scubamount/sc-offline/issues/24)).
+- Character creation and customization: the main menu is skipped. Not planned ([#24](https://github.com/scuba-sc/sc-offline/issues/24)).
 - The mobiGlas vehicle manager lists stored and retrieved ships but can't select them. Use a ship terminal (see [Ship terminals, hangars and ATC](#ship-terminals-hangars-and-atc)) or the **Vehicles** tab.
 - Your account's ships, items and hangar.
 - Choosing a spawn location. You start at the game's own spawn, or over Daymar with `start = Daymar` (see [launcher.md](launcher.md#sc-offlineini)).

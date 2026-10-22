@@ -2,7 +2,7 @@
 
 ## Unreleased
 
-- **One SDK for every external plugin: SDK 2.4.0.** The creative, discord, crew, spawn, build, mining, teleport and quantum plugins and the inspector, npc and contracts proof jobs now build and check against the published sco-core SDK 2.4.0 release candidate 1 ([`sdk-v2.4.0-rc.1`](https://github.com/scubamount/sco-core/releases/tag/sdk-v2.4.0-rc.1), combined `sco-sdk-2.4.0.zip`, game pack 0.8.0, verified game build 4.10.197.2878). The older SDK release downloads are gone; the final signed 2.4.0 release will follow. Plugin ABI 1.1 is unchanged and no plugin behaviour changes: this is a build-input bump only (spawn's `spawn.startup` refusal text no longer names an old SDK). The Windows host's `external/sco-core` pin is unchanged. Checked on a development machine with synthetic services and the SDK's plugin checker. **Not run in game.**
+- **One SDK for every external plugin: SDK 2.4.0.** The creative, discord, crew, spawn, build, mining, teleport and quantum plugins and the inspector, npc and contracts proof jobs now build and check against the published sco-core SDK 2.4.0 release candidate 1 ([`sdk-v2.4.0-rc.1`](https://github.com/scuba-sc/sco-core/releases/tag/sdk-v2.4.0-rc.1), combined `sco-sdk-2.4.0.zip`, game pack 0.8.0, verified game build 4.10.197.2878). The older SDK release downloads are gone; the final signed 2.4.0 release will follow. Plugin ABI 1.1 is unchanged and no plugin behaviour changes: this is a build-input bump only (spawn's `spawn.startup` refusal text no longer names an old SDK). The Windows host's `external/sco-core` pin is unchanged. Checked on a development machine with synthetic services and the SDK's plugin checker. **Not run in game.**
 
 ## 0.7.8.3 (2026-10-15)
 

@@ -4,14 +4,14 @@ Thanks for helping. sc-offline is a Star Citizen offline mod: a mod menu plus a 
 
 ## What fits this project
 
-- **Offline, never CIG's servers.** Two kinds of connection are allowed: local IPC with other processes on the same PC (bridges such as Titanfall 2/Northstar or Minecraft), and private co-presence between sc-offline players over a LAN or VPN through sco-core's `sco.net`. Never: connecting to Star Citizen's servers or online services, public or official online play, getting around anti-cheat or skipping its steps, signature-check bypass, account or entitlement tampering, forcing the game's host type or network context, unauthenticated remote commands between peers, telemetry, or anything that helps anyone cheat in the official game or hurt other players. The same rules bind plugins: [Plugin rules](https://github.com/scubamount/sco-core/blob/main/sdk/docs/plugin-rules.md). PRs like that are closed.
+- **Offline, never CIG's servers.** Two kinds of connection are allowed: local IPC with other processes on the same PC (bridges such as Titanfall 2/Northstar or Minecraft), and private co-presence between sc-offline players over a LAN or VPN through sco-core's `sco.net`. Never: connecting to Star Citizen's servers or online services, public or official online play, getting around anti-cheat or skipping its steps, signature-check bypass, account or entitlement tampering, forcing the game's host type or network context, unauthenticated remote commands between peers, telemetry, or anything that helps anyone cheat in the official game or hurt other players. The same rules bind plugins: [Plugin rules](https://github.com/scuba-sc/sco-core/blob/main/sdk/docs/plugin-rules.md). PRs like that are closed.
 - **No game files.** Don't commit Star Citizen files, extracted game data, or anything copied from Cloud Imperium Games. Ship class names and other identifiers in `data/` are fine.
 - **No secrets or personal data.** Strip account names, Windows user paths and tokens from logs before you post them.
 - **Undo what you change.** Anything the launcher changes on the PC (hosts file, firewall rules, renamed files) must be listed and undone afterwards; see [PC changes](docs/launcher.md#pc-changes).
 
 ## Reporting a bug
 
-Use the [Bug report](https://github.com/scubamount/sc-offline/issues/new/choose) form. Include the output of `sc-offline.exe status` and attach `data/launcher.log`, `data/mod.log` and the game's `Game.log`. One problem per issue. Check [Troubleshooting](README.md#troubleshooting) first.
+Use the [Bug report](https://github.com/scuba-sc/sc-offline/issues/new/choose) form. Include the output of `sc-offline.exe status` and attach `data/launcher.log`, `data/mod.log` and the game's `Game.log`. One problem per issue. Check [Troubleshooting](README.md#troubleshooting) first.
 
 For security problems (the self-update, the administrator helper, a change the launcher doesn't undo), **don't open a public issue**; see [SECURITY.md](SECURITY.md).
 
