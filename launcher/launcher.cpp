@@ -380,8 +380,8 @@ static std::string Sha256(const std::string& bytes) {
 // replaced: sc-offline.ini is kept (new keys are appended to it, commented out), and anything in
 // data\ that the release doesn't ship (wallet, saved places, bookmarks, logs) is left alone.
 
-static const wchar_t* kReleasesApi = L"https://api.github.com/repos/scubamount/sc-offline/releases/latest";
-static const wchar_t* kReleasesList = L"https://api.github.com/repos/scubamount/sc-offline/releases?per_page=20";
+static const wchar_t* kReleasesApi = L"https://api.github.com/repos/scuba-sc/sc-offline/releases/latest";
+static const wchar_t* kReleasesList = L"https://api.github.com/repos/scuba-sc/sc-offline/releases?per_page=20";
 
 static bool HttpGet(const wstring& url, std::string& body, DWORD timeoutMs, size_t cap) {
     body.clear();
@@ -901,7 +901,7 @@ static bool StageZip(const wstring& root, const wstring& zipPath, const std::str
     DWORD code = 1;
     if (!IsFile(tar) || !RunWait(tar, L"\"" + tar + L"\" -xf \"" + zipPath + L"\" -C \"" + ex + L"\"", ex, code) || code) {
         Out("[!] couldn't unpack the zip (Windows' tar.exe %s); nothing changed.\n"
-            "    Update by hand: %s\n", IsFile(tar) ? "failed" : "is missing", "https://github.com/scubamount/sc-offline/releases/latest");
+            "    Update by hand: %s\n", IsFile(tar) ? "failed" : "is missing", "https://github.com/scuba-sc/sc-offline/releases/latest");
         return false;
     }
     const wstring pkg = ex + L"\\sc-offline-" + Wide(tag);
@@ -1925,7 +1925,7 @@ static void OfferCrashReport(const wstring& here, const wstring& channelDir, ULO
         zipped ? "" : "; tar.exe failed, so it is a folder - zip it yourself");
     Out("          Look through it before you share it: the redaction covers handle, IDs and user name only.\n");
     if (!AskYes("Open the bug form in your browser (you attach the zip there)?")) return;
-    const std::string url = "https://github.com/scubamount/sc-offline/issues/new?template=bug.yml&title=" +
+    const std::string url = "https://github.com/scuba-sc/sc-offline/issues/new?template=bug.yml&title=" +
         UrlEncode("Crash: ") + "&version=" + UrlEncode(SCO_VERSION) + "&game=" + UrlEncode(gameBuild) +
         "&os=" + UrlEncode(OnWine() ? "Linux (Wine/Proton)" : "Windows");
     ShellExecuteW(nullptr, L"open", Wide(url).c_str(), nullptr, nullptr, SW_SHOWNORMAL);

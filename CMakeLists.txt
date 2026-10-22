@@ -190,9 +190,9 @@ if(SCO_BRIDGE_TITANLINK OR SCO_BRIDGE_VOXEL)
 endif()
 # G13 is default-on inside the approved host kit. Multiplayer is an external
 # SDK module; the retired host switch never re-adds gameplay target/registry inputs.
-option(SCO_MULTIPLAYER "Retired host-embedded option; the module is maintained in scubamount/sc-mp" OFF)
+option(SCO_MULTIPLAYER "Retired host-embedded option; the module is maintained in scuba-sc/sc-mp" OFF)
 if(SCO_MULTIPLAYER)
-  message(FATAL_ERROR "This module is external and maintained in scubamount/sc-mp")
+  message(FATAL_ERROR "This module is external and maintained in scuba-sc/sc-mp")
 endif()
 
 # WholeProgramOptimization + LinkTimeCodeGeneration in Release (/GL, /LTCG).

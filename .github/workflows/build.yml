@@ -112,7 +112,7 @@ jobs:
       - name: Download published SDK (combined core + game)
         env:
           GH_TOKEN: ${{ github.token }}
-        run: gh release download sdk-v2.4.0-rc.1 -R scubamount/sco-core -p 'sco-sdk-2.4.0.zip' -p SHA256SUMS -D "$RUNNER_TEMP/sdk-assets"
+        run: gh release download sdk-v2.4.0-rc.1 -R scuba-sc/sco-core -p 'sco-sdk-2.4.0.zip' -p SHA256SUMS -D "$RUNNER_TEMP/sdk-assets"
       - name: Isolated inspector build, full dependency traces, negative controls and checker
         run: python3 tools/check_inspector_sdk.py --archive "$RUNNER_TEMP/sdk-assets/sco-sdk-2.4.0.zip" --sums "$RUNNER_TEMP/sdk-assets/SHA256SUMS" --work "$RUNNER_TEMP/inspector-proof"
 
@@ -125,7 +125,7 @@ jobs:
       - name: Download published SDK (combined core + game)
         env:
           GH_TOKEN: ${{ github.token }}
-        run: gh release download sdk-v2.4.0-rc.1 -R scubamount/sco-core -p 'sco-sdk-2.4.0.zip' -p SHA256SUMS -D "$env:RUNNER_TEMP/sdk-assets"
+        run: gh release download sdk-v2.4.0-rc.1 -R scuba-sc/sco-core -p 'sco-sdk-2.4.0.zip' -p SHA256SUMS -D "$env:RUNNER_TEMP/sdk-assets"
       - name: Isolated MSVC inspector, module workflow, full dependency traces and checker
         run: python tools/check_inspector_sdk.py --archive "$env:RUNNER_TEMP/sdk-assets/sco-sdk-2.4.0.zip" --sums "$env:RUNNER_TEMP/sdk-assets/SHA256SUMS" --work "$env:RUNNER_TEMP/inspector-proof"
       - name: Upload enabled inspector release folder
@@ -145,7 +145,7 @@ jobs:
       - name: Download published SDK (combined core + game)
         env:
           GH_TOKEN: ${{ github.token }}
-        run: gh release download sdk-v2.4.0-rc.1 -R scubamount/sco-core -p 'sco-sdk-2.4.0.zip' -p SHA256SUMS -D "$RUNNER_TEMP/sdk-assets"
+        run: gh release download sdk-v2.4.0-rc.1 -R scuba-sc/sco-core -p 'sco-sdk-2.4.0.zip' -p SHA256SUMS -D "$RUNNER_TEMP/sdk-assets"
       - name: Isolated NPC build, lifecycle module test, full dependency traces, negative controls and checker
         run: python3 tools/check_npc_sdk.py --archive "$RUNNER_TEMP/sdk-assets/sco-sdk-2.4.0.zip" --sums "$RUNNER_TEMP/sdk-assets/SHA256SUMS" --work "$RUNNER_TEMP/npc-proof"
 
@@ -158,7 +158,7 @@ jobs:
       - name: Download published SDK (combined core + game)
         env:
           GH_TOKEN: ${{ github.token }}
-        run: gh release download sdk-v2.4.0-rc.1 -R scubamount/sco-core -p 'sco-sdk-2.4.0.zip' -p SHA256SUMS -D "$env:RUNNER_TEMP/sdk-assets"
+        run: gh release download sdk-v2.4.0-rc.1 -R scuba-sc/sco-core -p 'sco-sdk-2.4.0.zip' -p SHA256SUMS -D "$env:RUNNER_TEMP/sdk-assets"
       - name: Isolated MSVC NPC, lifecycle module test, full dependency traces and checker
         run: python tools/check_npc_sdk.py --archive "$env:RUNNER_TEMP/sdk-assets/sco-sdk-2.4.0.zip" --sums "$env:RUNNER_TEMP/sdk-assets/SHA256SUMS" --work "$env:RUNNER_TEMP/npc-proof"
       - name: Upload enabled NPC release folder
@@ -181,7 +181,7 @@ jobs:
       - name: Download published SDK (combined core + game)
         env:
           GH_TOKEN: ${{ github.token }}
-        run: gh release download sdk-v2.4.0-rc.1 -R scubamount/sco-core -p 'sco-sdk-2.4.0.zip' -p SHA256SUMS -D "$env:RUNNER_TEMP/sdk-assets"
+        run: gh release download sdk-v2.4.0-rc.1 -R scuba-sc/sco-core -p 'sco-sdk-2.4.0.zip' -p SHA256SUMS -D "$env:RUNNER_TEMP/sdk-assets"
       - name: Isolated MSVC contracts build, read-slice module workflow, full dependency traces and checker
         run: python tools/contracts_sdk_check.py --archive "$env:RUNNER_TEMP/sdk-assets/sco-sdk-2.4.0.zip" --sums "$env:RUNNER_TEMP/sdk-assets/SHA256SUMS" --work "$env:RUNNER_TEMP/contracts-proof" --slice read
       - name: Upload enabled contracts release folder
@@ -214,7 +214,7 @@ jobs:
       - name: Download published SDK
         env:
           GH_TOKEN: ${{ github.token }}
-        run: gh release download "$env:SDK_TAG" -R scubamount/sco-core -p "sco-sdk-$env:SDK_VERSION.zip" -p SHA256SUMS -D "$env:RUNNER_TEMP/sdk-assets"
+        run: gh release download "$env:SDK_TAG" -R scuba-sc/sco-core -p "sco-sdk-$env:SDK_VERSION.zip" -p SHA256SUMS -D "$env:RUNNER_TEMP/sdk-assets"
       - name: Build, test, check and stage independent feature
         env:
           FEATURE: ${{ matrix.feature }}

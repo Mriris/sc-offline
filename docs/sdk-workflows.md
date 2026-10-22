@@ -28,7 +28,7 @@ approval; see [Discord review and proof](../plugins/discord/README.md).
 
 The external modules use their feature sources and public SDK headers only, not
 private host registration, product version, host include trees or new ImGui inputs.
-The old NPC tab is removed pending renderer-neutral widgets ([sco-core #139](https://github.com/scubamount/sco-core/issues/139)); Crew and ordinary spawn are also external command-first consumers; their
+The old NPC tab is removed pending renderer-neutral widgets ([sco-core #139](https://github.com/scuba-sc/sco-core/issues/139)); Crew and ordinary spawn are also external command-first consumers; their
 legacy product picker tabs are removed. Legacy `src/npc.cpp` is untouched. `src/workflow_adapters.cpp` is removed.
 
 Use published SDK 2.4.0 release candidate 1, tag **`sdk-v2.4.0-rc.1`**, combined **`sco-sdk-2.4.0.zip`**, verified against
@@ -65,7 +65,7 @@ uses its tagged submodule independently.
 
 Download **`sco-sdk-2.4.0.zip`** (the combined legacy core+Star Citizen SDK) and
 **`SHA256SUMS`** from the
-[`sdk-v2.4.0-rc.1` pre-release](https://github.com/scubamount/sco-core/releases/tag/sdk-v2.4.0-rc.1)
+[`sdk-v2.4.0-rc.1` pre-release](https://github.com/scuba-sc/sco-core/releases/tag/sdk-v2.4.0-rc.1)
 (SDK 2.4.0 release candidate 1; the archive is named for the SDK version, the tag carries `-rc.1`).
 Its SHA-256 is `124751534277b89f0516af1897919c3485923811596e159a1f683bb80b1c243b`.
 Use an empty work directory. In Developer PowerShell for Visual Studio:
@@ -74,7 +74,7 @@ Use an empty work directory. In Developer PowerShell for Visual Studio:
 $Work = Join-Path $PWD "inspector-dev"
 New-Item -ItemType Directory -Path $Work -ErrorAction Stop | Out-Null
 Set-Location $Work
-$Release = "https://github.com/scubamount/sco-core/releases/download/sdk-v2.4.0-rc.1"
+$Release = "https://github.com/scuba-sc/sco-core/releases/download/sdk-v2.4.0-rc.1"
 Invoke-WebRequest "$Release/sco-sdk-2.4.0.zip" -OutFile "sco-sdk-2.4.0.zip"
 Invoke-WebRequest "$Release/SHA256SUMS" -OutFile "SHA256SUMS"
 python -c "import hashlib,pathlib; p=pathlib.Path('sco-sdk-2.4.0.zip'); rows=[l.split() for l in pathlib.Path('SHA256SUMS').read_text().splitlines() if l.strip()]; hashes=[r[0] for r in rows if r[1].lstrip('*')==p.name]; assert len(hashes)==1 and hashlib.sha256(p.read_bytes()).hexdigest()==hashes[0], 'SDK archive checksum mismatch'"
