@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+- **Development Loadout manual slots.** Add explicit public SDK 2.4.0 RC1 weapon/attachment/multitool assignments to the optional Player panel and commands, plus guarded async submit/progress/cancel. Copied legacy catalogue ports remain unsupported; no None/clear or tool-default preservation is inferred. Synthetic public-provider tests cover refusal, partial results and job lifetime. Loadout remains outside production staging; no backend or capability default changes. **Not run in game.**
+
 - **Keep your current Crew seat.** If you queue a move to another seat and then
   select the seat you are already in, Crew now cancels its older queued move.
   This stops future consumer retries; it does not undo a native link already
